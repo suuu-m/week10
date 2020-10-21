@@ -1,0 +1,68 @@
+<!-- <div class = "section">
+    <div class = "form-group">
+        <label for = "movie">Movie</label>
+    <select class = "form-control" id = "movietitle" [(ngModel)] = "movieId">
+        <option *ngFor = "let item of movieDB">{{item.title}}</option>
+    </select>
+    </div>
+    <div class = "form-group">
+        <label for = "actor">Actor</label>
+    <select class = "form-control" id = "actorname" [(ngModel)] = "actorId">
+        <option *ngFor = "let item of actorsDB">{{item.name}}</option>
+    </select>
+    </div>
+    <button type = "submit" class = "btn btn-primary" (click) = "onAddActorToMovie()">Insert</button><br>
+</div> -->
+
+<div class = "section">
+    <table class = "table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Select!</th>
+        </tr>
+        <tr *ngFor = "let item of actorsDB">
+            <td>{{item.name}}</td>
+            <td>{{item.bYear}}</td>
+            <!-- <td><button type = "submit" class = "btn btn-primary" (click) = "onSelectActor(item)">Select</button></td> -->
+            <td><a class = "btn btn-success" (click) = "selectActor(item)">Select</a></td>
+        </tr>
+    </table>
+
+    <table class = "table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Select!</th>
+        </tr>
+        <tr *ngFor = "let item of movieDB">
+            <td>{{item.title}}</td>
+            <td>{{item.year}}</td>
+            <!-- <td><button type = "submit" class = "btn btn-primary" (click) = "onSelectMovie(item)">Select</button></td> -->
+            <td><a class = "btn btn-success" (click) = "selectMovie(item)">Select</a></td>
+
+        </tr>
+    </table>
+
+    <div class = "alert alert-dark" role = "alert" *ngIf = "selectedActor != null">
+        <p>{{selectedActor.name}}</p>
+    </div>
+
+    <div class = "alert alert-dark" role = "alert" *ngIf = "selectedMovie != null">
+        <p>{{selectedMovie.title}}</p>
+    </div>
+
+    <!-- <div *ngIf = "movieDB.length>0 && actorsDB.length>0">
+        <div class = "form-group">
+            <label for = "movie">Movie</label>
+            <input type = "text" class = "form-control" id = "movie" [(ngModel)] = "title">
+        </div>
+        <div class = "form-group">
+            <label for = "actor">Actor</label>
+            <input type = "text" class = "form-control" id = "actor" [(ngModel)] = "name">
+        </div>
+        <button type = "submit" class = "btn btn-primary" (click) = "onAddActorToMovie()">Insert</button>
+    </div> -->
+
+
+</div>
